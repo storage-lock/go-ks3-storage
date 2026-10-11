@@ -21,7 +21,7 @@ func TestKS3Storage(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	cm := s3_storage.NewS3ConnectionManagerFromConfig(endpoint, accessKey, secretKey, true)
+	cm := s3_storage.NewS3ConnectionManagerFromEndpoint(endpoint, accessKey, secretKey, true)
 	s, err := NewKS3Storage(ctx, &s3_storage.S3StorageOptions{
 		ConnectionManager: cm,
 		BucketName:        bucket,
